@@ -1,0 +1,19 @@
+server:
+    port: 8763
+spring:
+    application:
+        name: helloconsumer
+eureka:
+    instance:
+        hostname: 192.168.0.106
+    client:
+        serviceUrl:
+            defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+feign:
+    hystrix:
+        enabled: true
+helloservice:
+    servicepath: http://service-helloworld/sayhello/
+    #findbyidpath: http://service-helloworld/ec/findbyid/
+    #findallpath: http://service-helloworld/ec/findall/
+
